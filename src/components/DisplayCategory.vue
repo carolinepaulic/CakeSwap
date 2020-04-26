@@ -4,7 +4,7 @@
         <display-item
             v-for="displayItem in displayItems"
             :item="displayItem"
-            :allow-unselect="!isSingleSelect"
+            :allow-unselect="allowUnselect"
             :on-select-event-name="itemSelectEventName"
         ></display-item>
     </div>
@@ -30,6 +30,10 @@ export default {
       isSingleSelect: {
         type: Boolean,
         default: false,
+      },
+      required: {
+        type: Boolean,
+        default: false,
       }
     },
     data() {
@@ -38,6 +42,12 @@ export default {
       };
     },
     computed: {
+      allowUnselect() {
+        if (this.required && this.isSingleSelect) {
+          return false;
+        }
+        return true;
+      },
       itemSelectEventName() {
         return `${this.title}:itemSelected`;
       },
