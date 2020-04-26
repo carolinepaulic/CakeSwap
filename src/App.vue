@@ -24,5 +24,6 @@ export default {
 </script>
 
 <style lang="scss">
+  @import 'resources/css/bootstrap.css';
   @import './resources/scss/app';
 </style>
