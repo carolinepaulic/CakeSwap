@@ -13,14 +13,10 @@ function snakeCaseToTitleCase(snakeCaseString) {
   return stringParts.join(' ');
 }
 
-function DisplayItem(name, displayName) {
+function DisplayItem(name, displayName, selected) {
   this.name = name;
   this.displayName = displayName ? displayName : snakeCaseToTitleCase(name);
+  this.isSelected = selected || false;
 }
 
 export default DisplayItem;
-
-
-
-
-

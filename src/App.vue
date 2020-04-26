@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="row">
     <div class="col-md-5">
-      <builder-panel />
+      <builder-panel :cake="finalProduct.cake"/>
     </div>
     <div class="col-md-7">
       <estimate-panel />
@@ -10,15 +10,40 @@
 </template>
 
 <script>
-import EstimatePanel from './components/EstimatePanel';
+import { EventBus, EVENTS } from './utils/event-bus';
 import BuilderPanel from './components/BuilderPanel';
+import EstimatePanel from './components/EstimatePanel';
+import FinalProduct from './data/final-product';
 
 export default {
   name: 'app',
   components: {
-    EstimatePanel,
     BuilderPanel,
+    EstimatePanel,
   },
+  data() {
+    return {
+      finalProduct: new FinalProduct(),
+    };
+  },
+  mounted() {
+    const vm = this;
+    EventBus.$on(EVENTS.cake.update, function(selectedItems) {
+      vm.finalProduct.cake.cakeFlavor = selectedItems[0].name;
+    });
+
+    EventBus.$on(EVENTS.frosting.update, function(selectedItems) {
+      vm.finalProduct.cake.frosting = selectedItems[0].name;
+    });
+
+    EventBus.$on(EVENTS.filling.update, function(selectedItems) {
+      vm.finalProduct.cake.filling = selectedItems[0].name;
+    });
+
+    EventBus.$on(EVENTS.toppings.update, function(selectedItems) {
+      vm.finalProduct.cake.toppings = selectedItems;
+    });
+  }
 }
 </script>
 
