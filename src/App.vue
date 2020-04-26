@@ -1,7 +1,11 @@
 <template>
-  <div id="app">
-    <estimate-panel />
-    <builder-panel />
+  <div id="app" class="row">
+    <div class="col-md-5">
+      <builder-panel />
+    </div>
+    <div class="col-md-7">
+      <estimate-panel />
+    </div>
   </div>
 </template>
 
@@ -15,15 +19,10 @@ export default {
     EstimatePanel,
     BuilderPanel,
   },
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
 }
 </script>
 
 <style lang="scss">
   @import 'resources/css/bootstrap.css';
-  @import './resources/scss/app';
+  @import 'resources/scss/app';
 </style>
