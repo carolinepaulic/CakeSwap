@@ -1,4 +1,3 @@
-
 function snakeCaseToTitleCase(snakeCaseString) {
   if (!snakeCaseString) {
     return '';
@@ -13,10 +12,11 @@ function snakeCaseToTitleCase(snakeCaseString) {
   return stringParts.join(' ');
 }
 
-function DisplayItem(name, displayName, selected) {
+function DisplayItem(name, displayName, selected, color) {
   this.name = name;
   this.displayName = displayName ? displayName : snakeCaseToTitleCase(name);
   this.isSelected = selected || false;
+  this.color = color || 'transparent';
 }
 
 export default DisplayItem;

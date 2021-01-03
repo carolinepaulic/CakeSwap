@@ -28,3 +28,26 @@ a {
 label input[type="checkbox"] {
   margin-right: 5px;
 }
+
+.finalProductWrapper {
+  padding: 20px 70px;
+
+  .cakeLayer {
+    $padding: 20px;
+    padding-top: $padding;
+    padding-left: $padding;
+    padding-right: $padding;
+    padding-bottom: 0;
+    height: 100px;
+    width: 100%;
+
+    .layerInner {
+      height: 100%;
+      width: 100%;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
