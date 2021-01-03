@@ -26,20 +26,20 @@ export default {
       finalProduct: new FinalProduct(),
     };
   },
-  mounted() {
+  beforeMount() {
     const vm = this;
     EventBus.$on(EVENTS.cake.update, function(selectedItems) {
-      vm.finalProduct.cake.cakeFlavor = selectedItems[0].name;
+      vm.finalProduct.cake.cakeFlavor = selectedItems[0];
     });
 
     EventBus.$on(EVENTS.frosting.update, function(selectedItems) {
-      vm.finalProduct.cake.frosting = selectedItems[0].name;
+      vm.finalProduct.cake.frosting = selectedItems[0];
     });
 
     EventBus.$on(EVENTS.filling.update, function(selectedItems) {
       // doing single select for now, can update to multi later
       const selectedItem = selectedItems[0];
-      vm.finalProduct.cake.filling = selectedItem.isSelected ? selectedItem.name : '';
+      vm.finalProduct.cake.filling = selectedItem.isSelected ? selectedItem : null;
     });
 
     EventBus.$on(EVENTS.toppings.update, function(selectedItems) {

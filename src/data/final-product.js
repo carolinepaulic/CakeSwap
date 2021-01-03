@@ -1,9 +1,9 @@
 function FinalProduct() {
   this.cake = {
     numLayers: 4,
-    cakeFlavor: 'vanilla',
-    filling: '',
-    frosting: 'vanilla',
+    cakeFlavor: null,
+    filling: null,
+    frosting: null,
     toppings: [],
   };
 }

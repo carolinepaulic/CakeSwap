@@ -59,25 +59,5 @@ export default {
       EVENTS: EVENTS,
     }
   },
-  methods: {
-    initCakeData() {
-      for (const i in this.cakes) {
-        if (this.cakes[i].name === this.cake.cakeFlavor) {
-          this.cakes[i].isSelected = true;
-        }
-      }
-    },
-    initFrostingData() {
-      for (const i in this.frostings) {
-        if (this.frostings[i].name === this.cake.frosting) {
-          this.frostings[i].isSelected = true;
-        }
-      }
-    },
-  },
-  beforeMount() {
-    this.initCakeData();
-    this.initFrostingData();
-  },
 }
 </script>

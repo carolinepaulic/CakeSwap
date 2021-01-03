@@ -43,6 +43,11 @@
           e.preventDefault();
         }
       }
+    },
+    mounted() {
+      if (this.item.isSelected) {
+        this.onChange();
+      }
     }
   }
 </script>

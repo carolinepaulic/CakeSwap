@@ -79,7 +79,7 @@ export default {
         EventBus.$emit(this.updateEventName, this.selectedItems);
       },
     },
-    mounted() {
+    beforeMount() {
       const vm = this;
       EventBus.$on(this.itemSelectEventName, function(payload) {
         vm.onDisplayItemSelect(payload);
