@@ -4,7 +4,7 @@
       <builder-panel :cake="finalProduct.cake"/>
     </div>
     <div class="col-md-7">
-      <estimate-panel />
+      <estimate-panel :cake="finalProduct.cake"/>
     </div>
   </div>
 </template>
@@ -37,7 +37,9 @@ export default {
     });
 
     EventBus.$on(EVENTS.filling.update, function(selectedItems) {
-      vm.finalProduct.cake.filling = selectedItems[0].name;
+      // doing single select for now, can update to multi later
+      const selectedItem = selectedItems[0];
+      vm.finalProduct.cake.filling = selectedItem.isSelected ? selectedItem.name : '';
     });
 
     EventBus.$on(EVENTS.toppings.update, function(selectedItems) {

@@ -40,18 +40,44 @@ import frostings from '../data/frostings';
 import toppings from '../data/toppings';
 
 export default {
-    name: 'Estimate-Panel',
-    components: {
-        DisplayCategory,
+  name: 'Estimate-Panel',
+  components: {
+    DisplayCategory,
+  },
+  props: {
+    cake: {
+      required: true,
+      type: Object,
     },
-    data() {
-        return {
-            cakes: cakes,
-            fillings: fillings,
-            frostings: frostings,
-            toppings: toppings,
-            EVENTS: EVENTS,
+  },
+  data() {
+    return {
+      cakes: cakes,
+      fillings: fillings,
+      frostings: frostings,
+      toppings: toppings,
+      EVENTS: EVENTS,
+    }
+  },
+  methods: {
+    initCakeData() {
+      for (const i in this.cakes) {
+        if (this.cakes[i].name === this.cake.cakeFlavor) {
+          this.cakes[i].isSelected = true;
         }
+      }
     },
+    initFrostingData() {
+      for (const i in this.frostings) {
+        if (this.frostings[i].name === this.cake.frosting) {
+          this.frostings[i].isSelected = true;
+        }
+      }
+    },
+  },
+  beforeMount() {
+    this.initCakeData();
+    this.initFrostingData();
+  },
 }
 </script>

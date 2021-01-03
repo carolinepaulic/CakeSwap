@@ -1,4 +1,3 @@
-
 function FinalProduct() {
   this.cake = {
     numLayers: 4,
@@ -10,8 +9,3 @@ function FinalProduct() {
 }
 
 export default FinalProduct;
-
-
-
-
-
