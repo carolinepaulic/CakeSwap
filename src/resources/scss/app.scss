@@ -33,16 +33,24 @@ label input[type="checkbox"] {
   padding: 20px 70px;
 
   .cakeLayer {
-    $padding: 20px;
-    padding-top: $padding;
-    padding-left: $padding;
-    padding-right: $padding;
+    $frosting-width: 20px;
+    $frosting-height: $frosting-width * .6;
+    $cake-height: 90px;
+    $filling-height: 10px;
+
+    padding-top: $frosting-height;
+    padding-left: $frosting-width;
+    padding-right: $frosting-width;
     padding-bottom: 0;
-    height: 100px;
+    height: $frosting-height + $cake-height + $filling-height;
     width: 100%;
 
+    .filling {
+      height: $filling-height;
+    }
+
     .layerInner {
-      height: 100%;
+      height: $cake-height;
       width: 100%;
     }
 
