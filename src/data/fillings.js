@@ -8,6 +8,7 @@ const $_items = [
   new DisplayItem('lemon_curd', '', false, '#ffd105'),
   new DisplayItem('pumpkin_pie', '', false, '#ff8a05'),
   new DisplayItem('pecan_pie', '', false, '#bb7c35'),
+  new DisplayItem('strawberry_curd', '', false, '#dd0303'),
 ];
 
 export default $_items;
