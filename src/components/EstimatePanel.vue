@@ -28,6 +28,7 @@
             :is-single-select="false"
             :required="false"
         ></display-category>
+        <total-panel :cake="cake"/>
     </div>
 </template>
 
@@ -37,11 +38,13 @@ import DisplayCategory from './DisplayCategory';
 import cakes from '../data/cakes';
 import fillings from '../data/fillings';
 import frostings from '../data/frostings';
+import TotalPanel from './TotalPanel';
 import toppings from '../data/toppings';
 
 export default {
   name: 'Estimate-Panel',
   components: {
+    TotalPanel,
     DisplayCategory,
   },
   props: {

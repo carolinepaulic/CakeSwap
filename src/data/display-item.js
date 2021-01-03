@@ -12,11 +12,12 @@ function snakeCaseToTitleCase(snakeCaseString) {
   return stringParts.join(' ');
 }
 
-function DisplayItem(name, displayName, selected, color) {
+function DisplayItem(name, displayName, selected, color, price) {
   this.name = name;
   this.displayName = displayName ? displayName : snakeCaseToTitleCase(name);
   this.isSelected = selected || false;
   this.color = color || 'transparent';
+  this.price = price || 0;
 }
 
 export default DisplayItem;
