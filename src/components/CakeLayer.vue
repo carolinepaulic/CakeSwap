@@ -1,5 +1,6 @@
 <template>
     <div class="cakeLayer" :style="{ backgroundColor: this.frosting.color }">
+        <div class="filling" :style="{ backgroundColor: this.filling ? this.filling.color : 'transparent' }"></div>
         <div class="layerInner" :style="{ backgroundColor: this.cake.color }">
             <p>Cake flavor: {{ cake.displayName }}, Filling: {{ filling ? filling.displayName : 'none' }}, Frosting: {{ frosting.displayName }}</p>
         </div>
