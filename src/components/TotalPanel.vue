@@ -1,7 +1,15 @@
 <template>
-    <div class="totalPanel">
-        <p>Total: {{ total | formatCurrency }}</p>
-    </div>
+    <PanelCollapsible class="totalPanel">
+        <template slot="panelHeader">
+            <div class="totalPanel">
+                <p>Total: {{ total | formatCurrency }}</p>
+            </div>
+        </template>
+        <template slot="panelBody">
+            Test
+        </template>
+    </PanelCollapsible>
+
 </template>
 
 <script>

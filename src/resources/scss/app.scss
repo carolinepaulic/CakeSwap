@@ -1,3 +1,6 @@
+/*
+ * Basic
+ */
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -9,6 +12,10 @@
 
 h1, h2 {
   font-weight: normal;
+}
+
+p {
+  margin: 0;
 }
 
 ul {
@@ -29,6 +36,86 @@ label input[type="checkbox"] {
   margin-right: 5px;
 }
 
+
+
+/*
+ * Collapsible panel & related animations
+ */
+$collapsedHeight: 60px;
+$collapseDuration: 1s;
+$collapseTransition: all $collapseDuration linear;
+.panelCollapsible {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  position: relative;
+
+  .collapseTrigger {
+    height: 10px;
+    width: 10px;
+    background-color: transparent;
+    border: 1px solid black;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transform: rotate(45deg);
+    transition: $collapseTransition;
+
+    &.collapsed {
+      transition: $collapseTransition;
+      background-color: black;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &.collapsed {
+    transition: $collapseTransition;
+    height: $collapsedHeight;
+    overflow-y: hidden;
+  }
+
+  &.open {
+    transition: $collapseTransition;
+    height: 90px;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY($collapsedHeight * -.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-enter-active {
+  animation: slide-down $collapseDuration;
+}
+
+.slide-leave-active {
+  animation: slide-down $collapseDuration reverse;
+}
+
+
+
+/*
+ * Estimate panel
+ */
+
+.totalPanel {
+  .panelHeader {
+    text-align: left;
+  }
+}
+
+
+
+/*
+ * Builder panel cake demo
+ */
 .finalProductWrapper {
   padding: 20px 70px;
 
@@ -52,10 +139,6 @@ label input[type="checkbox"] {
     .layerInner {
       height: $cake-height;
       width: 100%;
-    }
-
-    p {
-      margin: 0;
     }
   }
 }
