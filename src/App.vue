@@ -3,7 +3,7 @@
     <div class="col-md-5">
       <builder-panel :cake="finalProduct.cake"/>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-6">
       <estimate-panel :cake="finalProduct.cake"/>
     </div>
   </div>

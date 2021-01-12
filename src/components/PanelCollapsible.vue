@@ -5,7 +5,7 @@
             <span class="collapseTrigger" v-on:click="onCollapseTriggerClick" :class="collapseClass"></span>
         </div>
         <transition name="slide">
-            <div v-if="!collapsed">
+            <div v-if="!collapsed" class="panelBody">
                 <slot name="panelBody" />
             </div>
         </transition>

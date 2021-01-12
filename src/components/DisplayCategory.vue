@@ -1,5 +1,5 @@
 <template>
-    <div style="text-align: left;" class="row">
+    <div class="displayCategory row">
         <h2>{{ title }}</h2>
         <display-item
             v-for="displayItem in displayItems"

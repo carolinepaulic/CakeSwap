@@ -27,8 +27,9 @@
             :update-event-name="EVENTS.toppingUpdate"
             :is-single-select="false"
             :required="false"
+            class="last"
         ></display-category>
-        <total-panel :cake="cake"/>
+        <total-panel :cake="cake" class="row"/>
     </div>
 </template>
 

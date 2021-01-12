@@ -47,8 +47,16 @@ $collapseTransition: all $collapseDuration linear;
 .panelCollapsible {
   border: 1px solid #ddd;
   border-radius: 4px;
-  padding: 20px;
+  text-align: left;
   position: relative;
+
+  .panelHeader, .panelBody {
+    padding: 20px;
+  }
+
+  .panelHeader {
+    padding-bottom: 0;
+  }
 
   .collapseTrigger {
     height: 10px;
@@ -76,7 +84,7 @@ $collapseTransition: all $collapseDuration linear;
 
   &.open {
     transition: $collapseTransition;
-    height: 90px;
+    height: 370px;
   }
 }
 
@@ -104,14 +112,17 @@ $collapseTransition: all $collapseDuration linear;
 /*
  * Estimate panel
  */
+.displayCategory {
+  text-align: left;
 
-.totalPanel {
-  .panelHeader {
-    text-align: left;
+  &.last {
+    margin-bottom: 20px;
   }
 }
 
-
+.totalPanel {
+  margin-bottom: 20px;
+}
 
 /*
  * Builder panel cake demo
