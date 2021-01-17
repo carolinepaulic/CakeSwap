@@ -64,6 +64,7 @@ export default {
     layerInnerStyle() {
         return {
           backgroundColor: this.cake.color,
+          backgroundImage: `url(src/resources/images/cake/${this.cake.name}.png)`,
           height: this.px(this.cakeHeight),
         };
     },

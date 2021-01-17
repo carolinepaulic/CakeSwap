@@ -173,4 +173,16 @@ $collapseTransition: all $collapseDuration linear;
  */
 .finalProductWrapper {
   padding: 20px 50px;
+
+  .layerInner {
+    background-size: 120px;
+    background-position: center;
+    background-repeat: repeat;
+  }
+
+  .cakeLayer:nth-child(even) {
+    .layerInner {
+      transform: rotate(180deg);
+    }
+  }
 }
