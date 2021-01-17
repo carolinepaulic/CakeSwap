@@ -1,8 +1,10 @@
 <template>
     <div class="panelCollapsible" :class="collapseClass">
         <div class="panelHeader">
-            <slot name="panelHeader" />
             <span class="collapseTrigger" v-on:click="onCollapseTriggerClick" :class="collapseClass"></span>
+            <div class="panelHeaderInner">
+                <slot name="panelHeader" />
+            </div>
         </div>
         <transition name="slide">
             <div v-if="!collapsed" class="panelBody">

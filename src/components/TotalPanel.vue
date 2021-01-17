@@ -1,7 +1,9 @@
 <template>
     <PanelCollapsible class="totalPanel">
         <template slot="panelHeader">
-            <p>Total: {{ total | currency }}</p>
+            <LineItem
+                :display-name="'Total'"
+                :price="total" />
         </template>
         <template slot="panelBody">
             <div style="width: 100%;">
@@ -31,9 +33,6 @@
                     :price="topping.price" />
 
                 <hr/>
-                <LineItem
-                    :display-name="'Total'"
-                    :price="total" />
             </div>
         </template>
     </PanelCollapsible>

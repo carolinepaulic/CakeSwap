@@ -29,7 +29,9 @@
             :required="false"
             class="last"
         ></display-category>
-        <total-panel :cake="cake" class="row"/>
+        <total-panel
+            :cake="cake"
+            class="row col-md-8"/>
     </div>
 </template>
 
