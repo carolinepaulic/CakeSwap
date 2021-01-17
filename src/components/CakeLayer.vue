@@ -30,11 +30,6 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      fillingHeight: 10,
-    };
-  },
   computed: {
     cakeHeight() {
       return 60 + (this.widthInInches * 3);
@@ -57,7 +52,7 @@ export default {
     fillingStyle() {
         return {
           backgroundColor: this.filling ? this.filling.color : 'transparent',
-          height: this.px(this.fillingHeight),
+          height: this.px(this.widthInInches),
         }
     },
     frostingHeight() {
