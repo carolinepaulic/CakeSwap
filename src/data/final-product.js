@@ -1,5 +1,6 @@
 function FinalProduct() {
   this.cake = {
+    size: null,
     numLayers: 4,
     cakeFlavor: null,
     filling: null,

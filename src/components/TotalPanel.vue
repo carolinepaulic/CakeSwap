@@ -8,15 +8,17 @@
         <template slot="panelBody">
             <div style="width: 100%;">
                 <LineItem
+                    v-if="cake.cakeFlavor"
                     :display-name="`${cake.cakeFlavor.displayName} Cake`"
-                    :price="cake.cakeFlavor.price" />
+                    :price="cake.cakeFlavor.price * this.sizeMultiplier" />
                 <LineItem
                     v-if="cake.filling"
                     :display-name="`${cake.filling.displayName} Filling`"
-                    :price="cake.filling.price" />
+                    :price="cake.filling.price * this.sizeMultiplier" />
                 <LineItem
+                    v-if="cake.frosting"
                     :display-name="`${cake.frosting.displayName} Buttercream`"
-                    :price="cake.frosting.price" />
+                    :price="cake.frosting.price * this.sizeMultiplier" />
 
                 <hr/>
                 <LineItem
@@ -57,6 +59,9 @@ export default {
     },
   },
   computed: {
+    baseTotal() {
+      return this.layerPrice * this.cake.numLayers;
+    },
     layerPrice() {
       if (!this.cake.cakeFlavor || !this.cake.frosting) {
         return 0;
@@ -67,10 +72,10 @@ export default {
         total += this.cake.filling.price;
       }
 
-      return total;
+      return total * this.sizeMultiplier;
     },
-    baseTotal() {
-      return this.layerPrice * this.cake.numLayers;
+    sizeMultiplier() {
+      return this.cake.size.name * .1;
     },
     total() {
       let total = this.baseTotal;

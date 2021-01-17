@@ -172,28 +172,5 @@ $collapseTransition: all $collapseDuration linear;
  * Builder panel cake demo
  */
 .finalProductWrapper {
-  padding: 20px 70px;
-
-  .cakeLayer {
-    $frosting-width: 20px;
-    $frosting-height: $frosting-width * .6;
-    $cake-height: 90px;
-    $filling-height: 10px;
-
-    padding-top: $frosting-height;
-    padding-left: $frosting-width;
-    padding-right: $frosting-width;
-    padding-bottom: 0;
-    height: $frosting-height + $cake-height + $filling-height;
-    width: 100%;
-
-    .filling {
-      height: $filling-height;
-    }
-
-    .layerInner {
-      height: $cake-height;
-      width: 100%;
-    }
-  }
+  padding: 20px 50px;
 }

@@ -5,7 +5,12 @@
         </div>
         <div v-else>
             <p>Toppings: <span v-for="(topping, index) in cake.toppings">{{ topping.displayName }}<span v-if="index !== cake.toppings.length -1">, </span></span></p>
-            <CakeLayer  v-for="i in cake.numLayers" :cake="cake.cakeFlavor" :filling="cake.filling" :frosting="cake.frosting" />
+            <CakeLayer
+                v-for="i in cake.numLayers"
+                :cake="cake.cakeFlavor"
+                :filling="cake.filling"
+                :frosting="cake.frosting"
+                :size="cake.size"/>
         </div>
     </div>
 </template>
@@ -26,7 +31,7 @@ export default {
   },
   computed: {
     loading() {
-      if (this.cake.cakeFlavor && this.cake.frosting) {
+      if (this.cake.cakeFlavor && this.cake.frosting && this.cake.size) {
         return false;
       }
       return true;

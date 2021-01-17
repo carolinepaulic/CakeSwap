@@ -42,6 +42,10 @@ export default {
       vm.finalProduct.cake.filling = selectedItem.isSelected ? selectedItem : null;
     });
 
+    EventBus.$on(EVENTS.size.update, function(selectedItems) {
+      vm.finalProduct.cake.size = selectedItems[0];
+    });
+
     EventBus.$on(EVENTS.toppings.update, function(selectedItems) {
       vm.finalProduct.cake.toppings = selectedItems;
     });

@@ -14,6 +14,10 @@ const EVENTS = {
     itemSelected: 'Frosting:itemSelected',
     update: 'Frosting:update',
   },
+  size: {
+    itemSelected: 'Size:itemSelected',
+    update: 'Size:update',
+  },
   toppings: {
     itemSelected: 'Toppings:itemSelected',
     update: 'Toppings:update',
